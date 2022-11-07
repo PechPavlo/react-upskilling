@@ -28,7 +28,8 @@
 }
 
 .header a:hover,
-.header a:active {
+.header a:active,
+.header a.active {
   color: #b864da;
 }
 
@@ -42,7 +43,8 @@
 }
 
 .header button:hover,
-.header button:active {
+.header button:active,
+.header button.active {
   background-color: #ffa600;
   border-color: #ffa600;
 }
