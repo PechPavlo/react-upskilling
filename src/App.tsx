@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import MainHeader from './components/MainHeader/MainHeader';
+import Listing from './pages/Listing';
+import NotFound from './pages/NotFound';
+import Visualization from './pages/Visualization';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MainHeader />
+      <main>
+        <Routes>
+          <Route
+            path="/react-upskilling/"
+            element={<Navigate replace to="/react-upskilling/visualization" />}
+          />
+          <Route path="/react-upskilling/listing" element={<Listing />} />
+          <Route
+            path="/react-upskilling/visualization"
+            element={<Visualization />}
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </div>
   );
 }
