@@ -1,4 +1,4 @@
-const Visualization = () => {
+const StackMapPage = () => {
   return (
     <section>
       <h2>Stack Map Page!</h2>
@@ -6,4 +6,4 @@ const Visualization = () => {
   );
 };
 
-export default Visualization;
+export default StackMapPage;

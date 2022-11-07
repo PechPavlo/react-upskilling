@@ -1,25 +1,33 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainHeader from './components/MainHeader/MainHeader';
-import Listing from './pages/Listing';
+import StackModules from './pages/StackModulesPage';
 import NotFound from './pages/NotFound';
-import Visualization from './pages/Visualization';
+import StackMapPage from './pages/StackMapPage';
+import AddModuleModal from './components/AddModuleModal/AddModuleModal';
+import AddStackModal from './components/AddStackModal/AddStackModal';
 
 function App() {
   return (
     <div>
       <MainHeader />
+      <AddModuleModal />
+      <AddStackModal />
       <main>
         <Routes>
           <Route
-            path="/react-upskilling/"
-            element={<Navigate replace to="/react-upskilling/visualization" />}
+            path="/"
+            element={<Navigate replace to="/react-upskilling/stak-map" />}
           />
-          <Route path="/react-upskilling/listing" element={<Listing />} />
           <Route
-            path="/react-upskilling/visualization"
-            element={<Visualization />}
+            path="/react-upskilling/"
+            element={<Navigate replace to="/react-upskilling/stak-map" />}
           />
+          <Route
+            path="/react-upskilling/stak-modules"
+            element={<StackModules />}
+          />
+          <Route path="/react-upskilling/stak-map" element={<StackMapPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
