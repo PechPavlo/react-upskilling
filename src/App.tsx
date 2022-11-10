@@ -4,15 +4,13 @@ import MainHeader from './components/MainHeader/MainHeader';
 import StackModules from './pages/StackModulesPage';
 import NotFound from './pages/NotFound';
 import StackMapPage from './pages/StackMapPage';
-import AddModuleModal from './components/AddModuleModal/AddModuleModal';
-import AddStackModal from './components/AddStackModal/AddStackModal';
+import ModalWrapper from './components/ModalWrapper/ModalWrapper';
 
 function App() {
   return (
     <div>
       <MainHeader />
-      <AddModuleModal />
-      <AddStackModal />
+      <ModalWrapper />
       <main>
         <Routes>
           <Route
