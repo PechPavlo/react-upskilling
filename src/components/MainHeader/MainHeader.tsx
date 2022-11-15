@@ -1,17 +1,16 @@
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { modulesActions } from '../../store/modules';
-import { stacksActions } from '../../store/stacks';
+
+import { modalActions } from '../../store/modal';
+import { FormsTypes } from '../../constants/forms-types.enum';
 import classes from './MainHeader.module.css';
 
 const MainHeader = () => {
   const dispatch = useDispatch();
-  const addStackHandler = () => {
-    dispatch(stacksActions.openAddStackModal());
+  const addButtonHandler = (type: FormsTypes) => {
+    dispatch(modalActions.openModal(type));
   };
-  const addModuleHandler = () => {
-    dispatch(modulesActions.openAddModuleModal());
-  };
+
   return (
     <header className={classes.header}>
       <h2>React Upskilling</h2>
@@ -34,10 +33,14 @@ const MainHeader = () => {
             </NavLink>
           </li>
           <li>
-            <button onClick={addStackHandler}>Add Stack</button>
+            <button onClick={() => addButtonHandler(FormsTypes.AddStack)}>
+              Add Stack
+            </button>
           </li>
           <li>
-            <button onClick={addModuleHandler}>Add Modele</button>
+            <button onClick={() => addButtonHandler(FormsTypes.AddModule)}>
+              Add Modele
+            </button>
           </li>
         </ul>
       </nav>

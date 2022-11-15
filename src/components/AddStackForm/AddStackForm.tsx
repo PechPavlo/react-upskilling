@@ -4,16 +4,18 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import { stacksActions } from '../../store/stacks';
+import { modalActions } from '../../store/modal';
 
 const AddStackForm = () => {
   const dispatch = useDispatch();
   const { stacks } = useSelector((state: any) => state.stacks);
   const closeHandler = () => {
-    dispatch(stacksActions.closeAddStackModal());
+    dispatch(modalActions.closeModal());
   };
   const submitHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    dispatch(stacksActions.closeAddStackModal());
+    dispatch(modalActions.closeModal());
+    dispatch(stacksActions.addStack({}));
   };
 
   return (
