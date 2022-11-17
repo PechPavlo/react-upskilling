@@ -3,11 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 
-import { modulesActions } from '../../store/modules';
-import { stacksActions } from '../../store/stacks';
-
 import AddModuleForm from '../AddModuleForm/AddModuleForm';
 import AddStackForm from '../AddStackForm/AddStackForm';
+import { modalActions } from '../../store/modal';
+import { FormsTypes } from '../../constants/forms-types.enum';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -23,17 +22,14 @@ const style = {
 
 const ModalWrapper = () => {
   const dispatch = useDispatch();
-  const { isAddModuleModalOpen } = useSelector((state: any) => state.modules);
-  const { isAddStackModalOpen } = useSelector((state: any) => state.stacks);
+
+  const { isModalOpen: isOpen, formType } = useSelector(
+    (state: any) => state.modal
+  );
+
   const closeHandler = () => {
-    if (isAddModuleModalOpen) {
-      dispatch(modulesActions.closeAddModuleModal());
-    }
-    if (isAddStackModalOpen) {
-      dispatch(stacksActions.closeAddStackModal());
-    }
+    dispatch(modalActions.closeModal());
   };
-  const isOpen = isAddModuleModalOpen || isAddStackModalOpen;
 
   return (
     <Modal
@@ -43,8 +39,8 @@ const ModalWrapper = () => {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        {isAddModuleModalOpen && <AddModuleForm />}
-        {isAddStackModalOpen && <AddStackForm />}
+        {formType === FormsTypes.AddModule && <AddModuleForm />}
+        {formType === FormsTypes.AddStack && <AddStackForm />}
       </Box>
     </Modal>
   );

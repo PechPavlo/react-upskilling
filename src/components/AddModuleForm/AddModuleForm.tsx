@@ -3,16 +3,18 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 import { modulesActions } from '../../store/modules';
+import { modalActions } from '../../store/modal';
 
 const AddModuleForm = () => {
   const dispatch = useDispatch();
   const { modules } = useSelector((state: any) => state.modules);
   const closeHandler = () => {
-    dispatch(modulesActions.closeAddModuleModal());
+    dispatch(modalActions.closeModal());
   };
   const submitHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    dispatch(modulesActions.closeAddModuleModal());
+    dispatch(modalActions.closeModal());
+    dispatch(modulesActions.addModule({}));
   };
 
   return (

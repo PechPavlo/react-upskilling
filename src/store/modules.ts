@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { COMPETENCY } from '../constants/competency';
 
 const initialModulesState = {
-  isAddModuleModalOpen: false,
   modules: [
     {
       id: 'm1',
@@ -37,12 +36,6 @@ const modulesSlice = createSlice({
   initialState: initialModulesState,
   reducers: {
     addModule(state, action) {},
-    openAddModuleModal(state) {
-      state.isAddModuleModalOpen = true;
-    },
-    closeAddModuleModal(state) {
-      state.isAddModuleModalOpen = false;
-    },
   },
 });
 

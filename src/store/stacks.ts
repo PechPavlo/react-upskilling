@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialStacksState = {
-  isAddStackModalOpen: false,
   stacks: ['React', 'Angular', 'Vue'],
 };
 
@@ -10,12 +9,6 @@ const stacksSlice = createSlice({
   initialState: initialStacksState,
   reducers: {
     addStack(state, action) {},
-    openAddStackModal(state) {
-      state.isAddStackModalOpen = true;
-    },
-    closeAddStackModal(state) {
-      state.isAddStackModalOpen = false;
-    },
   },
 });
 
