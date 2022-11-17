@@ -1,18 +1,19 @@
 import { useSelector } from 'react-redux';
-import { COMPETENCY } from '../../constants/competency';
+import { Module as ModuleType } from '../../constants/module.interface';
+
 import Module from '../Module/Module';
 
 const Competency = (props: any) => {
-  const { competency, index } = props;
+  const { competency } = props;
   const { modules } = useSelector((state: any) => state.modules);
   const modulesList = modules.filter(
-    (module: any) => module.competencyType === COMPETENCY[index]
+    (module: ModuleType) => module.competencyType === competency
   );
   return (
     <li>
       <h3>{competency}</h3>
       <ul>
-        {modulesList.map((module: any) => (
+        {modulesList.map((module: ModuleType) => (
           <Module
             key={module.id}
             id={module.id}

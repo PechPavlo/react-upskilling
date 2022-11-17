@@ -15,17 +15,20 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Navigate replace to="/react-upskilling/stak-map" />}
+            element={<Navigate replace to="/react-upskilling/stack-map" />}
           />
           <Route
             path="/react-upskilling/"
-            element={<Navigate replace to="/react-upskilling/stak-map" />}
+            element={<Navigate replace to="/react-upskilling/stack-map" />}
           />
           <Route
-            path="/react-upskilling/stak-modules"
+            path="/react-upskilling/stack-modules"
             element={<StackModules />}
           />
-          <Route path="/react-upskilling/stak-map" element={<StackMapPage />} />
+          <Route
+            path="/react-upskilling/stack-map"
+            element={<StackMapPage />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
