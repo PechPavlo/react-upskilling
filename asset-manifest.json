@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-upskilling/static/css/main.4f60bf54.css",
-    "main.js": "/react-upskilling/static/js/main.fa2e9b21.js",
+    "main.js": "/react-upskilling/static/js/main.1140bd25.js",
     "static/js/787.b218bf12.chunk.js": "/react-upskilling/static/js/787.b218bf12.chunk.js",
     "index.html": "/react-upskilling/index.html",
     "main.4f60bf54.css.map": "/react-upskilling/static/css/main.4f60bf54.css.map",
-    "main.fa2e9b21.js.map": "/react-upskilling/static/js/main.fa2e9b21.js.map",
+    "main.1140bd25.js.map": "/react-upskilling/static/js/main.1140bd25.js.map",
     "787.b218bf12.chunk.js.map": "/react-upskilling/static/js/787.b218bf12.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4f60bf54.css",
-    "static/js/main.fa2e9b21.js"
+    "static/js/main.1140bd25.js"
   ]
 }
