@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import MainHeader from './components/MainHeader/MainHeader';
+import StackModules from './pages/StackModulesPage';
+import NotFound from './pages/NotFound';
+import StackMapPage from './pages/StackMapPage';
+import ModalWrapper from './components/ModalWrapper/ModalWrapper';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MainHeader />
+      <ModalWrapper />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={<Navigate replace to="/react-upskilling/stak-map" />}
+          />
+          <Route
+            path="/react-upskilling/"
+            element={<Navigate replace to="/react-upskilling/stak-map" />}
+          />
+          <Route
+            path="/react-upskilling/stak-modules"
+            element={<StackModules />}
+          />
+          <Route path="/react-upskilling/stak-map" element={<StackMapPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </div>
   );
 }
