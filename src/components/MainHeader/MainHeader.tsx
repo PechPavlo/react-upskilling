@@ -18,7 +18,7 @@ const MainHeader = () => {
         <ul>
           <li>
             <NavLink
-              to="/react-upskilling/stak-map"
+              to="/react-upskilling/stack-map"
               className={({ isActive }) => (isActive ? classes.active : '')}
             >
               Stack Map
@@ -26,7 +26,7 @@ const MainHeader = () => {
           </li>
           <li>
             <NavLink
-              to="/react-upskilling/stak-modules"
+              to="/react-upskilling/stack-modules"
               className={(navData) => (navData.isActive ? classes.active : '')}
             >
               Stack Modules
@@ -39,7 +39,7 @@ const MainHeader = () => {
           </li>
           <li>
             <button onClick={() => addButtonHandler(FormsTypes.AddModule)}>
-              Add Modele
+              Add Module
             </button>
           </li>
         </ul>

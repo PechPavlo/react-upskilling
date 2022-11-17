@@ -75,18 +75,18 @@ const AddModuleForm = () => {
         </FormControl>
 
         <FormControl fullWidth sx={{ marginTop: '20px' }}>
-          <InputLabel id="demo-simple-select-label">
-            Module Competensy
-          </InputLabel>
+          <InputLabel id="module-name-label">Module Competensy</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
+            labelId="module-name-label"
+            id="module-name-select"
             label="Module Competensy"
             value={SelectedCompetency}
             onChange={selectHandler}
           >
             {Object.values(Competencies).map((value, index) => (
-              <MenuItem value={value}>{value}</MenuItem>
+              <MenuItem key={index} value={value}>
+                {value}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>
